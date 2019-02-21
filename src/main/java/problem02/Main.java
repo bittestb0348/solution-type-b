@@ -1,7 +1,9 @@
 package problem02;
 
 public class Main {
-
+	
+	public static Arithmetic arithmetic;
+	
 	public static void main(String[] args) {
 		String[] expressions = {"3 + 4", "12 * 4", "8 / 2", "10 - 2"};
 		
@@ -17,15 +19,32 @@ public class Main {
 			// 문제의 결과화면에 맞게 출력하는 계산기 나머지 코드를 아래에 완성 하십시오.
 			// 주어진 코드는 수정하지 않습니다.
 
-		
+			getInstance(arith);
+			System.out.println(arithmetic.calculate(num1, num2));
 		
 		}
 	}
 	
 	public static Arithmetic getInstance(String arith) {
+	//	Arithmetic arithmetic = null;
 		
 		// 메소드 구현을 완성 하십시오.
-		
-		return null;
+		if(arith.equals("+")) {
+			arithmetic = new Add();
+			return arithmetic;
+		}
+		else if(arith.equals("-")) {
+			arithmetic = new Sub();
+			return arithmetic;
+		}
+		else if(arith.equals("*")) {
+			arithmetic = new Mul();
+			return arithmetic;
+		}
+		else {
+			arithmetic = new Div();
+			return arithmetic;
+		}
 	}
 }
+

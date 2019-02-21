@@ -12,5 +12,19 @@ public class Main {
 		// 코드를 완성 하십시오.
 		//
 		
+		int result = 0;
+		int iIdx = 0 , jIdx = 0;
+		
+		for(int i = 0; i < arr.length; i++) {
+			for(int j = 0; j < arr.length; j++) {
+				if(i != j && result < arr[i] * arr[j]) {
+					result = arr[i] * arr[j];
+					iIdx = i;
+					jIdx = j;
+				}
+			}
+		}
+		
+		System.out.println("[" + arr[iIdx] + "," + arr[jIdx] + "]");
 	}
 }
